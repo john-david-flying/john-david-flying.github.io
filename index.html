@@ -3,35 +3,65 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 	<title>Menu</title>
 </head>
 <body>
-	<h1>A Complete Menu</h1>
+    <nav id="header-nav" class="navbar navbar-default">
+		<div class="container">
+		  <div class="navbar-header">
+			<a href="index.html" class="pull-left visible-md visible-xs">
+				<a><h1>Food LLC</h1></a>
+			</a>
+  
 
-	<div class="row" >
-  		<div class="col-lg-1 col-md-1 col-sm-1">
-  		<label>Beef</label><br>
-  		<div id="description" >
-  			<p style="font-size: 0.75em;">Where is the Beef?</p>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+			  <span class="sr-only">Toggle navigation</span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+		  </div>
+		  
+		  <div id="collapsable-nav" class="collapse navbar-collapse">
+			 <ul id="nav-list" class="nav navbar-nav navbar-right">
+			  <li>
+				<a href="index.html">
+					<span class="d-sm-none">Chicken</span><br>
+				</a>
+			  </li>
+			  <li>
+				<a href="index.html">
+				  <span class=".d-sm-block">Beef</span><br>
+				  </a>
+			  </li>
+			  <li>
+				<a href="index.html">
+				  <span class=".d-sm-block">Sushi</span><br>
+				  </a>
+			  </li>
+			</ul><!-- #nav-list -->
+		  </div><!-- .collapse .navbar-collapse -->
+		</div><!-- .container -->
+	</nav><!-- #header-nav -->
+	<div class="navbar-two">
+		<a><h1 class="text-center">Our Menu</h1></a> 
+	</div>
+	<div class="container">
+		<div class="row" >
+  			<div class="col-lg-1 col-md-1 col-sm-1">
+  			<label>Chicken</label>
+  			<div id="description" >
+  				<p style="font-size: 0.75em;height: 1000px;">Fried Chicken</p>
+  			</div>
   		</div>
-  	</div>
-
-  	<div class="col-lg-2 col-md-2 col-sm-2">
-  		<label>Chicken</label><br>
-  		<div id="description">
-  			<p style="font-size: 0.75em;">Fried Chicken</p>
-  		</div>
-  	</div>
-
-  	<div class="col-lg-3 col-md-3 col-sm-3">
-  		<label>Fish</label><br>
-  		<div id="description" >
-  			<p style="font-size: 0.75em;">Smelly Fish</p>
-  		</div>
-  	</div>
-
 	</div>
 
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+  
 </body>
 </html>

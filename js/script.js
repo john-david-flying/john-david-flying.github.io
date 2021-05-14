@@ -25,7 +25,11 @@ var menuItemHtml = "snippets/menu-item.html";
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
+	//console.log("28")
+	//console.log(selector)
+	//console.log(html)
   var targetElem = document.querySelector(selector);
+  //console.log(targetElem)
   targetElem.innerHTML = html;
 };
 
@@ -40,8 +44,14 @@ var showLoading = function (selector) {
 // with propValue in given 'string'
 var insertProperty = function (string, propName, propValue) {
   var propToReplace = "{{" + propName + "}}";
+  //console.log("47")
+  //console.log(string)
+  //console.log(propToReplace)
+  //console.log(propValue)
   string = string
     .replace(new RegExp(propToReplace, "g"), propValue);
+   //console.log("53")
+  //console.log(string)
   return string;
 };
 
@@ -83,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
-  buildAndShowHomeHTML,true) // Explicitly setting the flag to get JSON from server processed into an object literal
+  buildAndShowHomeHTML) // Explicitly setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
 
@@ -104,8 +114,10 @@ function buildAndShowHomeHTML (categories) {
       // var chosenCategoryShortName = ....
       
     	var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
-    	console.log("107")
-    	console.log(chosenCategoryShortName)
+    	//console.log("107")
+    	//console.log(chosenCategoryShortName)
+    	//console.log("118")
+//    	console.log(homeHtml)
 
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
@@ -121,15 +133,17 @@ function buildAndShowHomeHTML (categories) {
       //
       // var homeHtmlToInsertIntoMainPage = ....
 
-		var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlUrl,'randomCategoryShortName',"'"+chosenCategoryShortName+"'");
-
+		var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,"randomCategoryShortName","'"+chosenCategoryShortName+"'");
+		//console.log("137")
+		//console.log(homeHtmlToInsertIntoMainPage)
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       // ....
 
-//		insertHtml(homeHtmlUrl,homeHtmlToInsertIntoMainPage)
+		insertHtml("#main-content",homeHtmlToInsertIntoMainPage)
+		console.log("134")
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
